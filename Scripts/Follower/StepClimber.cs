@@ -15,10 +15,8 @@ public class StepClimber : MonoBehaviour
 
         transform.rotation = Quaternion.LookRotation(_walker.WalkDirection, Vector3.up);
 
-        if (CanStepUp() == false)
-            return;
-
-        _rigidbody.position += Vector3.up * (_climbSpeed * Time.fixedDeltaTime);
+        if (CanStepUp())
+            _rigidbody.position += Vector3.up * (_climbSpeed * Time.fixedDeltaTime);
     }
 
     private bool CanStepUp()

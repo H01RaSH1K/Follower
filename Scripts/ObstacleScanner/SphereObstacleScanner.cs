@@ -18,8 +18,10 @@ public class SphereObstacleScanner : ObstacleScanner
             QueryTriggerInteraction);
     }
 
+#if UNITY_EDITOR
     protected override void DrawDebug(bool hasObstacle)
     {
         Debug.DrawRay(GetScanOrigin(), AbsoluteDirection * ScanDistance, hasObstacle ? Color.red : Color.green);
     }
+# endif
 }
